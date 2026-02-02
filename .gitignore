@@ -1,0 +1,20 @@
+.env
+__pycache__/
+*.pyc
+.DS_Store
+
+# Python
+.venv/
+venv/
+
+# Node / frontend
+frontend/node_modules/
+frontend/.next/
+frontend/.turbo/
+frontend/.vercel/
+frontend/package-lock.json
+
+# VSCode / IDE
+.vscode/
+.idea/
+

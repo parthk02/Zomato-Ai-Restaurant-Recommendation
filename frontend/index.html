@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Zomato AI Restaurant Recommendations</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main class="page">
+      <header class="header">
+        <h1 class="header__title">Zomato AI Restaurant Recommendations</h1>
+        <p class="header__subtitle">
+          Discover the best restaurants in your city using AI-powered recommendations.
+        </p>
+      </header>
+
+      <section class="card card--inputs" aria-label="Restaurant search form">
+        <div class="card__content">
+          <div class="field-group">
+            <div class="field">
+              <label for="citySelect" class="field__label">City</label>
+              <select id="citySelect" class="field__control">
+                <option value="">Select a city...</option>
+              </select>
+              <p class="field__error" id="cityError"></p>
+            </div>
+
+            <div class="field">
+              <label for="budgetInput" class="field__label">Budget (for two people)</label>
+              <input
+                id="budgetInput"
+                class="field__control"
+                type="text"
+                placeholder="e.g. 500 or 500–1200"
+              />
+              <p class="field__helper">Enter a single value or a range.</p>
+              <p class="field__error" id="budgetError"></p>
+            </div>
+          </div>
+
+          <div class="actions">
+            <button id="submitBtn" class="btn btn--primary">Get Recommendations</button>
+            <p class="actions__note">
+              Uses Groq LLM to generate explanations.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="loadingSection" class="loading" hidden>
+        <div class="loading__spinner" aria-hidden="true"></div>
+        <p class="loading__text">Finding the best restaurants for you…</p>
+      </section>
+
+      <section class="results">
+        <h2 class="results__title">Recommended Restaurants</h2>
+        <p id="resultsMessage" class="results__message">
+          Start by selecting a city and budget above.
+        </p>
+        <div id="resultsList" class="results__list"></div>
+      </section>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+  </html>
+
